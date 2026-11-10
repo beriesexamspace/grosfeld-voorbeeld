@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Over ons | Grosfeld Interieurbouw &amp; Trappen Weert (demo)</title>
+<meta name="description" content="Grosfeld Interieurbouw &amp; Trappen uit Weert, sinds 2001: een klein bedrijf met korte lijnen en een eigen werkplaats. Maatwerk trappen en interieurs binnen 30 km rond Weert.">
+<meta name="theme-color" content="#4a4848">
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/icoon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- Vangnet: zonder werkend script blijft alle inhoud zichtbaar -->
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__revealOK)document.documentElement.classList.remove('js');},2500);</script>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<!-- ===== Header (zwevende navbar, blijft altijd staan) ===== -->
+<header class="site-header" id="top">
+  <div class="site-header__bar">
+    <a class="logo" href="index.html" aria-label="Grosfeld Interieurbouw &amp; Trappen, naar de homepagina">
+      <img src="img/interieurbouw-grosfeld-weert.png" alt="Grosfeld Interieurbouw &amp; Trappen" width="450" height="101">
+    </a>
+    <nav class="nav" aria-label="Hoofdmenu">
+      <a href="index.html">Home</a>
+      <a href="trappen.html">Trappen</a>
+      <a href="zoldertrap.html">Zoldertrap</a>
+      <a href="interieurbouw.html">Interieurbouw</a>
+      <a href="projecten.html">Projecten</a>
+      <a href="over-ons.html" aria-current="page">Over ons</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="site-header__actions">
+      <a class="phone" href="tel:+31495625272"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0495 625272</a>
+      <a class="btn btn--red btn--sm" href="contact.html#offerte">Offerte aanvragen</a>
+      <button class="burger" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" aria-label="Mobiel menu" aria-hidden="true" inert>
+  <button class="drawer__close" type="button" aria-label="Menu sluiten">&times;</button>
+  <nav aria-label="Mobiel hoofdmenu">
+    <a href="index.html">Home</a>
+    <a href="trappen.html">Trappen</a>
+    <a href="zoldertrap.html">Zoldertrap</a>
+    <a href="interieurbouw.html">Interieurbouw</a>
+    <a href="projecten.html">Projecten</a>
+    <a href="over-ons.html" aria-current="page">Over ons</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="drawer__buttons">
+    <a class="btn btn--red" href="contact.html#offerte">Offerte aanvragen</a>
+    <a class="btn btn--light" href="tel:+31495625272">Bel 0495 625272</a>
+  </div>
+</aside>
+
+<div class="mobilebar" role="region" aria-label="Snel contact">
+  <a class="btn btn--light" href="tel:+31495625272">Bellen</a>
+  <a class="btn btn--red" href="contact.html#offerte">Offerte aanvragen</a>
+</div>
+
+<main id="main">
+
+<!-- INHOUD -->
+<style>
+/* Alleen voor over-ons.html: werkgebied-kaart en stijlenraster */
+.area { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.area__map { padding: clamp(24px, 4vw, 40px); }
+.area__map svg { display: block; width: 100%; height: auto; max-width: 420px; margin: 0 auto; }
+.area__ring { fill: none; stroke: var(--line); stroke-width: 1.5; }
+.area__ring--main { fill: var(--red-tint); stroke: var(--red); stroke-width: 2; stroke-dasharray: 6 7; }
+.area__dot { fill: var(--red); }
+.area__pulse { fill: var(--red); opacity: .18; transform-origin: 200px 200px; animation: area-pulse 3.2s ease-out infinite; }
+.area__label { font-family: var(--head, inherit); font-weight: 700; font-size: 20px; fill: var(--ink); }
+.area__small { font-size: 13px; fill: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+@keyframes area-pulse { 0% { transform: scale(.4); opacity: .3; } 100% { transform: scale(1.6); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .area__pulse { animation: none; } }
+.area__text p { color: var(--muted); font-size: 1.05rem; }
+.area__text p + p { margin-top: 16px; }
+.area__text .h2 { margin-bottom: 20px; }
+.area__text .btn-row { margin-top: 28px; }
+.styles { grid-auto-rows: 260px; }
+@media (max-width: 1000px) { .area { grid-template-columns: 1fr; } .styles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .styles { grid-auto-rows: 200px; gap: 12px; } }
+</style>
+
+<!-- ===== Pagina-hero ===== -->
+<section class="page-hero" aria-labelledby="pagina-titel">
+  <img class="page-hero__img" src="img/vaste-trap.jpg" alt="" width="1450" height="800" fetchpriority="high">
+  <div class="wrap">
+    <nav aria-label="Kruimelpad">
+      <ol class="crumbs reveal">
+        <li><a href="index.html">Home</a></li>
+        <li><span aria-current="page">Over ons</span></li>
+      </ol>
+    </nav>
+    <p class="eyebrow eyebrow--light reveal" style="--d:.04s">Over Grosfeld</p>
+    <h1 class="h1 reveal" id="pagina-titel" style="--d:.08s">Vakmanschap uit Weert, sinds 2001</h1>
+    <p class="page-hero__lead reveal" style="--d:.16s">Een klein bedrijf met korte lijnen. Wij maken houten trappen, meubels en interieurs op maat, met ambachtelijke vaardigheden en degelijke materialen.</p>
+    <div class="btn-row reveal" style="--d:.24s">
+      <a class="btn btn--red" href="contact.html#offerte">Vraag een offerte aan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--light" href="projecten.html">Bekijk ons werk</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Feiten ===== -->
+<section class="section section--tight" aria-label="Feiten">
+  <div class="wrap">
+    <dl class="facts reveal">
+      <div class="fact"><dt class="fact__k">Opgericht</dt><dd class="fact__v">2001</dd></div>
+      <div class="fact"><dt class="fact__k">Werkgebied</dt><dd class="fact__v">30 km rond Weert</dd></div>
+      <div class="fact"><dt class="fact__k">Voor</dt><dd class="fact__v">Particulier en zakelijk</dd></div>
+      <div class="fact"><dt class="fact__k">Werkwijze</dt><dd class="fact__v">Afspraak = afspraak</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===== Verhaal ===== -->
+<section class="section" aria-labelledby="verhaal-titel">
+  <div class="wrap about">
+    <div class="about__text reveal">
+      <p class="eyebrow">Ons verhaal</p>
+      <h2 class="h2" id="verhaal-titel">Van hobby naar vak</h2>
+      <p>Grosfeld Interieurbouw &amp; Trappen is in 2001 opgericht door Steffan Grosfeld. Hij volgde de opleiding houtbewerking aan Sint Jan in Maaseik (België) en maakte van zijn hobby zijn werk.</p>
+      <p>Wij zijn een klein bedrijf. Daardoor zijn de lijnen kort en zijn wij makkelijk te bereiken. U heeft contact met de mensen die uw trap, meubel of interieur ook echt maken.</p>
+      <p>Wij leveren hoogwaardig maatwerk in houten trappen, meubels en interieurs voor particulieren, bedrijven en architecten. Ambachtelijke vaardigheden en degelijke materialen zijn de basis van ons vakmanschap.</p>
+      <div class="btn-row">
+        <a class="btn btn--red" href="contact.html">Neem contact op</a>
+        <a class="btn btn--dark" href="projecten.html">Bekijk projecten</a>
+      </div>
+    </div>
+    <div class="about__photos reveal" style="--d:.1s">
+      <div class="media"><button type="button" class="zoom" data-zoom="verhaal" data-caption="Gebogen trap met stalen leuning"><img src="img/gedraaide-trap.jpg" alt="Trap met een gebogen zwarte stalen leuning en lichte houten treden" loading="lazy" width="600" height="1234"></button></div>
+      <div class="media media--small"><button type="button" class="zoom" data-zoom="verhaal" data-caption="Eiken mediawand met haard"><img src="img/Interieurbouw-meubels00062.jpg" alt="Lichte eiken mediawand op maat met ingebouwde haard en open vakken" loading="lazy" width="800" height="600"></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Werkplaats, materialen, zakelijk ===== -->
+<section class="section section--soft" aria-labelledby="ambacht-titel">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="eyebrow">Het ambacht</p>
+      <h2 class="h2" id="ambacht-titel">Hoe wij werken</h2>
+      <p class="lead">Van het eerste idee tot de laatste afwerking heeft u één vast aanspreekpunt.</p>
+    </header>
+    <div class="rows">
+      <div class="split">
+        <div class="split__media reveal">
+          <div class="media"><button type="button" class="zoom" data-zoom="ambacht" data-caption="In de eigen werkplaats"><img src="img/meubelmaker-weert-2.jpg" alt="Hand bedient een houtfrees in de werkplaats, zaagsel stuift rond" loading="lazy" width="1450" height="800"></button></div>
+        </div>
+        <div class="split__text reveal" style="--d:.08s">
+          <p class="eyebrow">Eigen werkplaats</p>
+          <h3 class="h2">Ontworpen en gemaakt in Weert</h3>
+          <p>Wij ontwerpen en realiseren al onze projecten in onze eigen werkplaats. Daar hebben wij alle benodigdheden voor houtbewerking. Zo houden wij grip op de kwaliteit en kunnen wij elk stuk precies op maat maken.</p>
+          <p>Maatwerk betekent dat elke trap en elk meubel wordt gemaakt voor die ene ruimte, met uw maten en wensen als uitgangspunt.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="split__media reveal">
+          <div class="split__duo">
+            <div class="media"><button type="button" class="zoom" data-zoom="ambacht" data-caption="Massief eiken tafel op stalen poten"><img src="img/Interieurbouw-meubels00057.jpg" alt="Massief eiken tafel met natuurlijke randen en een bank op zwarte stalen X-poten" loading="lazy" width="800" height="450"></button></div>
+            <div class="media"><button type="button" class="zoom" data-zoom="ambacht" data-caption="Eiken tafelblad op een stalen onderstel"><img src="img/Interieurbouw-keukens00011.jpg" alt="Close-up van een eiken tafelblad op een zwart stalen onderstel" loading="lazy" width="800" height="600"></button></div>
+          </div>
+        </div>
+        <div class="split__text reveal" style="--d:.08s">
+          <p class="eyebrow">Materialen</p>
+          <h3 class="h2">Hout als basis, combinaties als kracht</h3>
+          <p>Werken met mooie en verschillende houtsoorten is voor ons de basis. Elke houtsoort heeft een eigen kleur, tekening en karakter. Daarom kijken wij samen met u welk hout past bij de ruimte en het gebruik.</p>
+          <p>Ook combinaties met andere materialen zijn bij ons in goede handen:</p>
+          <ul class="checks">
+            <li><span class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>Staal</li>
+            <li><span class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>Rvs</li>
+            <li><span class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>Smeedwerk</li>
+            <li><span class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>Glas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="split">
+        <div class="split__media reveal">
+          <div class="media"><button type="button" class="zoom" data-zoom="ambacht" data-caption="Ingerichte bedrijfsbus"><img src="img/Interieurbouw-zakelijk00011.jpg" alt="Bedrijfsbus met een inrichting op maat: laden, een werkblad en een kolomboormachine" loading="lazy" width="800" height="450"></button></div>
+        </div>
+        <div class="split__text reveal" style="--d:.08s">
+          <p class="eyebrow">Voor wie</p>
+          <h3 class="h2">Particulier, zakelijk en architect</h3>
+          <p>Wij werken voor particulieren, bedrijven en architecten. Naast trappen en interieurs voor thuis realiseren wij ook interieurs voor horeca, winkels en kantoren. Dat gebeurt in goed overleg, zodat het resultaat past bij wat u wilt.</p>
+          <ul class="bullets">
+            <li>Trappen, meubels, keukens en kasten</li>
+            <li>Horeca-, winkel- en kantoorinterieur</li>
+            <li>Het inrichten van een bedrijfsbus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stijlen ===== -->
+<section class="section" aria-labelledby="stijl-titel">
+  <div class="wrap">
+    <header class="head head--center reveal">
+      <p class="eyebrow">Stijl</p>
+      <h2 class="h2" id="stijl-titel">Strak, klassiek, modern of landelijk</h2>
+      <p class="lead">Wat stijl betreft kunt u bij ons alle kanten op. Klik op een foto om die groter te bekijken.</p>
+    </header>
+    <div class="gallery gallery--4 styles" id="galerij-stijlen">
+      <figure class="shot reveal"><button type="button" aria-label="Foto vergroten: strak"><img src="img/Interieurbouw-meubels00036.jpg" alt="Badmeubel op maat met twee wastafels en een houten blad" loading="lazy" width="800" height="532"></button><figcaption>Strak</figcaption></figure>
+      <figure class="shot reveal" style="--d:.06s"><button type="button" aria-label="Foto vergroten: klassiek"><img src="img/traphek-ijzer.jpg" alt="Klassiek traphek met een houten leuning en sierlijke ijzeren spijlen" loading="lazy" width="800" height="600"></button><figcaption>Klassiek</figcaption></figure>
+      <figure class="shot reveal" style="--d:.12s"><button type="button" aria-label="Foto vergroten: modern"><img src="img/trap-zwart-modern.jpg" alt="Moderne zwarte trap met een leuning van staalkabels" loading="lazy" width="600" height="1067"></button><figcaption>Modern</figcaption></figure>
+      <figure class="shot reveal" style="--d:.18s"><button type="button" aria-label="Foto vergroten: landelijk"><img src="img/Interieurbouw-keukens00013.jpg" alt="Landelijke witte keuken met kookeiland en donker werkblad" loading="lazy" width="800" height="600"></button><figcaption>Landelijk</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Werkwijze ===== -->
+<section class="section section--soft" aria-labelledby="werkwijze-titel">
+  <div class="wrap">
+    <header class="head head--center reveal">
+      <p class="eyebrow">Werkwijze</p>
+      <h2 class="h2" id="werkwijze-titel">Zo pakken wij uw project aan</h2>
+      <p class="lead">Persoonlijk, overzichtelijk en met korte lijnen.</p>
+    </header>
+    <ol class="steps">
+      <li class="card step reveal"><span class="step__nr" aria-hidden="true">01</span><div><h3 class="h3">Kennismaking</h3><p>U belt, mailt of vult het formulier in. Wij nemen contact met u op voor een gesprek.</p></div></li>
+      <li class="card step reveal" style="--d:.08s"><span class="step__nr" aria-hidden="true">02</span><div><h3 class="h3">Luisteren en meedenken</h3><p>Wij luisteren naar uw wensen en brengen de mogelijkheden en eventuele beperkingen in kaart.</p></div></li>
+      <li class="card step reveal" style="--d:.16s"><span class="step__nr" aria-hidden="true">03</span><div><h3 class="h3">Advies en offerte</h3><p>U krijgt een goed advies en een vrijblijvende offerte, zodat u weet waar u aan toe bent.</p></div></li>
+      <li class="card step reveal" style="--d:.24s"><span class="step__nr" aria-hidden="true">04</span><div><h3 class="h3">Maken en plaatsen</h3><p>Wij maken uw project in onze eigen werkplaats en plaatsen het. Afspraak is afspraak.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== Werkgebied ===== -->
+<section class="section" aria-labelledby="gebied-titel">
+  <div class="wrap area">
+    <div class="card card--static area__map reveal">
+      <svg viewBox="0 0 400 400" role="img" aria-labelledby="gebied-svg-titel">
+        <title id="gebied-svg-titel">Werkgebied: een straal van 30 kilometer rond Weert</title>
+        <circle class="area__ring" cx="200" cy="200" r="190"/>
+        <circle class="area__ring" cx="200" cy="200" r="120"/>
+        <circle class="area__ring area__ring--main" cx="200" cy="200" r="160"/>
+        <circle class="area__pulse" cx="200" cy="200" r="60"/>
+        <circle class="area__dot" cx="200" cy="200" r="9"/>
+        <text class="area__label" x="200" y="240" text-anchor="middle">Weert</text>
+        <line x1="200" y1="200" x2="360" y2="200" stroke="currentColor" stroke-width="1.5" style="color:var(--red)" stroke-dasharray="4 5"/>
+        <text class="area__small" x="290" y="190" text-anchor="middle">30 km</text>
+      </svg>
+    </div>
+    <div class="area__text reveal" style="--d:.08s">
+      <p class="eyebrow">Werkgebied</p>
+      <h2 class="h2" id="gebied-titel">Binnen 30 km rond Weert</h2>
+      <p>Ons werkgebied is voornamelijk Zuidoost Nederland, binnen een straal van 30 kilometer vanuit Weert. Zo blijven wij dicht bij u in de buurt, voor het inmeten, het plaatsen en de afwerking.</p>
+      <p>Twijfelt u of uw woonplaats binnen ons werkgebied valt? Bel of mail ons gerust.</p>
+      <div class="btn-row">
+        <a class="btn btn--red" href="tel:+31495625272">Bel 0495 625272</a>
+        <a class="btn btn--dark" href="mailto:info@grosfeld-interieurbouw.nl">Stuur een e-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Google reviews (alleen voorbeeldkaarten) ===== -->
+<section class="section section--soft" aria-labelledby="reviews-titel">
+  <div class="wrap">
+    <header class="head head--center reveal">
+      <p class="eyebrow">Reviews</p>
+      <h2 class="h2" id="reviews-titel">Google reviews</h2>
+    </header>
+    <div class="reviews">
+      <article class="card review reveal" aria-label="Voorbeeldkaart">
+        <span class="review__tag">Voorbeeld</span>
+        <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg></div>
+        <span class="bar"></span><span class="bar bar--m"></span><span class="bar bar--s"></span>
+        <div class="review__who"><span class="dot"></span><span class="bar"></span></div>
+      </article>
+      <article class="card review reveal" style="--d:.08s" aria-label="Voorbeeldkaart">
+        <span class="review__tag">Voorbeeld</span>
+        <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg></div>
+        <span class="bar bar--m"></span><span class="bar"></span><span class="bar bar--s"></span>
+        <div class="review__who"><span class="dot"></span><span class="bar"></span></div>
+      </article>
+      <article class="card review reveal" style="--d:.16s" aria-label="Voorbeeldkaart">
+        <span class="review__tag">Voorbeeld</span>
+        <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z"/></svg></div>
+        <span class="bar"></span><span class="bar bar--s"></span><span class="bar bar--m"></span>
+        <div class="review__who"><span class="dot"></span><span class="bar"></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA-band ===== -->
+<section class="section" aria-labelledby="cta-titel">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <img class="cta-band__img" src="img/Interieurbouw-meubels00037.jpg" alt="" loading="lazy" width="600" height="800">
+      <div>
+        <h2 class="h2" id="cta-titel">Kennismaken?</h2>
+        <p>Vertel ons wat u wilt maken. Wij nemen contact met u op voor een gesprek en een vrijblijvende offerte.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--red" href="contact.html#offerte">Offerte aanvragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--light" href="tel:+31495625272">Bel 0495 625272</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /INHOUD -->
+
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img class="footer__logo" src="img/interieurbouw-grosfeld-weert.png" alt="Grosfeld Interieurbouw &amp; Trappen" width="450" height="101" loading="lazy">
+      <p>Sinds 2001 maatwerk houten trappen, meubels en interieurs voor particulieren, bedrijven en architecten, binnen 30 km rond Weert.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      <h2>Pagina's</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trappen.html">Trappen</a></li>
+        <li><a href="zoldertrap.html">Zoldertrap</a></li>
+        <li><a href="interieurbouw.html">Interieurbouw</a></li>
+        <li><a href="projecten.html">Projecten</a></li>
+        <li><a href="over-ons.html">Over ons</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2>Diensten</h2>
+      <ul>
+        <li><a href="trappen.html">Maatwerk trappen</a></li>
+        <li><a href="trappen.html#traprenovatie">Traprenovatie</a></li>
+        <li><a href="zoldertrap.html">Vaste trap naar de zolder</a></li>
+        <li><a href="interieurbouw.html">Meubels en interieurs</a></li>
+        <li><a href="contact.html#offerte">Offerte aanvragen</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <ul>
+        <li>Veldbloemstraat 46<br>6002 CH Weert</li>
+        <li><a href="tel:+31495625272">0495 625272</a></li>
+        <li><a href="tel:+31623852878">06 23852878</a></li>
+        <li><a href="mailto:info@grosfeld-interieurbouw.nl">info@grosfeld-interieurbouw.nl</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="wrap">
+      <p>&copy; Grosfeld Interieurbouw &amp; Trappen, Weert. <a href="privacy.html">Privacyverklaring</a></p>
+      <p>Demo door Berie Foundation</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

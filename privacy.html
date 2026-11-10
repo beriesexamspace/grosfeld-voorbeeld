@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacyverklaring | Grosfeld Interieurbouw &amp; Trappen Weert (demo)</title>
+<meta name="description" content="Hoe Grosfeld Interieurbouw &amp; Trappen omgaat met de gegevens uit het contact- en offerteformulier: welke gegevens, waarvoor, hoe lang en hoe u contact opneemt.">
+<meta name="theme-color" content="#4a4848">
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/icoon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- Vangnet: zonder werkend script blijft alle inhoud zichtbaar -->
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__revealOK)document.documentElement.classList.remove('js');},2500);</script>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<!-- ===== Header (zwevende navbar, blijft altijd staan) ===== -->
+<header class="site-header" id="top">
+  <div class="site-header__bar">
+    <a class="logo" href="index.html" aria-label="Grosfeld Interieurbouw &amp; Trappen, naar de homepagina">
+      <img src="img/interieurbouw-grosfeld-weert.png" alt="Grosfeld Interieurbouw &amp; Trappen" width="450" height="101">
+    </a>
+    <nav class="nav" aria-label="Hoofdmenu">
+      <a href="index.html">Home</a>
+      <a href="trappen.html">Trappen</a>
+      <a href="zoldertrap.html">Zoldertrap</a>
+      <a href="interieurbouw.html">Interieurbouw</a>
+      <a href="projecten.html">Projecten</a>
+      <a href="over-ons.html">Over ons</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="site-header__actions">
+      <a class="phone" href="tel:+31495625272"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0495 625272</a>
+      <a class="btn btn--red btn--sm" href="contact.html#offerte">Offerte aanvragen</a>
+      <button class="burger" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" aria-label="Mobiel menu" aria-hidden="true" inert>
+  <button class="drawer__close" type="button" aria-label="Menu sluiten">&times;</button>
+  <nav aria-label="Mobiel hoofdmenu">
+    <a href="index.html">Home</a>
+    <a href="trappen.html">Trappen</a>
+    <a href="zoldertrap.html">Zoldertrap</a>
+    <a href="interieurbouw.html">Interieurbouw</a>
+    <a href="projecten.html">Projecten</a>
+    <a href="over-ons.html">Over ons</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="drawer__buttons">
+    <a class="btn btn--red" href="contact.html#offerte">Offerte aanvragen</a>
+    <a class="btn btn--light" href="tel:+31495625272">Bel 0495 625272</a>
+  </div>
+</aside>
+
+<div class="mobilebar" role="region" aria-label="Snel contact">
+  <a class="btn btn--light" href="tel:+31495625272">Bellen</a>
+  <a class="btn btn--red" href="contact.html#offerte">Offerte aanvragen</a>
+</div>
+
+<main id="main">
+
+<!-- INHOUD -->
+
+<style>
+  /* Alleen voor privacy.html: rustige tekstpagina met inhoudsopgave */
+  .privacy { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s7); }
+  @media (min-width: 1024px) {
+    .privacy { grid-template-columns: 240px minmax(0, 1fr); gap: var(--s8); align-items: start; }
+    .privacy__toc { position: sticky; top: 112px; }
+  }
+  .privacy__toc { padding: var(--s5); border: 1px solid var(--line); border-radius: var(--r); background: var(--white); }
+  .privacy__toc h2 { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: var(--s3); }
+  .privacy__toc ol { counter-reset: toc; display: grid; gap: 2px; }
+  .privacy__toc li { counter-increment: toc; }
+  .privacy__toc a { display: flex; gap: var(--s3); padding: 7px 10px; margin: 0 -10px; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: .93rem; line-height: 1.35; transition: background-color .25s ease, color .25s ease, transform .25s ease; }
+  .privacy__toc a::before { content: counter(toc, decimal-leading-zero); color: var(--red); font-weight: 600; font-size: .8rem; padding-top: 2px; }
+  .privacy__toc a:hover { background: var(--soft); color: var(--red); transform: translateX(2px); }
+  .privacy__toc a:active { transform: translateX(2px) scale(.98); }
+  .privacy__body { min-width: 0; }
+  .privacy__body .prose h2 { scroll-margin-top: 112px; }
+  .privacy__short { margin-bottom: var(--s7); }
+  .privacy__short h2 { font-size: 1.2rem; margin-bottom: var(--s4); }
+  .privacy__date { margin-top: var(--s7); padding-top: var(--s5); border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
+  @media (prefers-reduced-motion: reduce) { .privacy__toc a, .privacy__toc a:hover { transition: none; transform: none; } }
+</style>
+
+<section class="page-hero page-hero--plain" aria-labelledby="pagina-titel">
+  <div class="wrap">
+    <nav aria-label="Kruimelpad">
+      <ol class="crumbs reveal">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><span aria-current="page">Privacyverklaring</span></li>
+      </ol>
+    </nav>
+    <p class="eyebrow eyebrow--light reveal" style="--d:.04s">Privacy</p>
+    <h1 class="h1 reveal" id="pagina-titel" style="--d:.08s">Privacyverklaring</h1>
+    <p class="page-hero__lead reveal" style="--d:.16s">Hoe wij omgaan met de gegevens die u invult in het contact- en offerteformulier. Kort en in gewone taal.</p>
+  </div>
+</section>
+
+<section class="section" aria-label="Privacyverklaring">
+  <div class="wrap">
+    <div class="privacy">
+      <nav class="privacy__toc reveal" aria-labelledby="toc-titel">
+        <h2 id="toc-titel">Op deze pagina</h2>
+        <ol>
+          <li><a href="#wie">Wie wij zijn</a></li>
+          <li><a href="#welke">Welke gegevens</a></li>
+          <li><a href="#waarvoor">Waarvoor</a></li>
+          <li><a href="#hoelang">Hoe lang</a></li>
+          <li><a href="#delen">Delen met anderen</a></li>
+          <li><a href="#rechten">Uw rechten</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <div class="privacy__body">
+        <p class="demo-flag reveal"><span><strong>Voorbeeldtekst voor de demo.</strong> Deze privacyverklaring is een voorbeeld. Grosfeld Interieurbouw &amp; Trappen moet de tekst zelf controleren en aanvullen voordat de site live gaat. Het formulier in deze demo verstuurt niets.</span></p>
+
+        <div class="card card--static package privacy__short reveal">
+          <h2 class="h3">In het kort</h2>
+          <ul class="checks checks--1">
+            <li><span class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>Wij vragen alleen wat nodig is om op uw aanvraag te reageren.</li>
+            <li><span class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>Wij gebruiken uw gegevens alleen voor contact over uw vraag of project.</li>
+            <li><span class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>U kunt altijd vragen welke gegevens wij hebben, en ze laten aanpassen of verwijderen.</li>
+          </ul>
+        </div>
+
+        <div class="prose reveal">
+          <h2 id="wie">1. Wie wij zijn</h2>
+          <p>Deze website is van <strong>Grosfeld Interieurbouw &amp; Trappen</strong>, Veldbloemstraat 46, 6002 CH Weert. Wij zijn verantwoordelijk voor de gegevens die u via deze website aan ons geeft.</p>
+
+          <h2 id="welke">2. Welke gegevens wij vragen</h2>
+          <p>Als u het contact- of offerteformulier invult, ontvangen wij:</p>
+          <ul>
+            <li>uw naam en woonplaats;</li>
+            <li>uw e-mailadres;</li>
+            <li>uw telefoonnummer, als u dat invult;</li>
+            <li>het soort project en uw bericht;</li>
+            <li>een foto of bestand, als u dat meestuurt.</li>
+          </ul>
+          <p>Wij vragen u geen gevoelige gegevens te sturen die niet nodig zijn voor uw vraag.</p>
+
+          <h2 id="waarvoor">3. Waarvoor wij ze gebruiken</h2>
+          <p>Wij gebruiken uw gegevens alleen om:</p>
+          <ul>
+            <li>contact met u op te nemen over uw vraag;</li>
+            <li>uw wensen door te nemen en een offerte te maken;</li>
+            <li>een afspraak met u te plannen, bijvoorbeeld om in te meten.</li>
+          </ul>
+          <p>Met het vinkje onder het formulier geeft u toestemming voor dit gebruik. U kunt die toestemming altijd weer intrekken.</p>
+
+          <h2 id="hoelang">4. Hoe lang wij ze bewaren</h2>
+          <p>Wij bewaren uw gegevens niet langer dan nodig is voor uw aanvraag. Komt er geen opdracht, dan verwijderen wij ze na afloop. Wordt het wel een opdracht, dan bewaren wij de gegevens die nodig zijn voor het project en de administratie, zolang de wet dat vraagt.</p>
+          <p><strong>In te vullen door het bedrijf:</strong> de precieze bewaartermijn voor aanvragen zonder opdracht.</p>
+
+          <h2 id="delen">5. Delen met anderen</h2>
+          <p>Wij verkopen uw gegevens niet. Wij delen ze alleen als dat nodig is voor uw project, bijvoorbeeld met een vaste partner die een deel van het werk uitvoert, of als de wet ons daartoe verplicht.</p>
+
+          <h2 id="rechten">6. Uw rechten</h2>
+          <p>U heeft het recht om:</p>
+          <ul>
+            <li>te vragen welke gegevens wij van u hebben;</li>
+            <li>onjuiste gegevens te laten aanpassen;</li>
+            <li>uw gegevens te laten verwijderen;</li>
+            <li>uw toestemming in te trekken.</li>
+          </ul>
+          <p>Stuur hiervoor een e-mail. Wij reageren zo snel mogelijk. Bent u niet tevreden over hoe wij met uw gegevens omgaan, dan kunt u een klacht indienen bij de Autoriteit Persoonsgegevens.</p>
+
+          <h2 id="contact">7. Contact</h2>
+          <p>Heeft u een vraag over deze privacyverklaring of over uw gegevens? Neem gerust contact met ons op.</p>
+          <ul>
+            <li>E-mail: <a href="mailto:info@grosfeld-interieurbouw.nl">info@grosfeld-interieurbouw.nl</a></li>
+            <li>Telefoon: <a href="tel:+31495625272">0495 625272</a></li>
+            <li>Post: Veldbloemstraat 46, 6002 CH Weert</li>
+          </ul>
+        </div>
+
+        <p class="privacy__date reveal">Wij kunnen deze verklaring aanpassen. De meest recente versie staat altijd op deze pagina. <strong>Datum in te vullen door het bedrijf.</strong></p>
+
+        <div class="btn-row reveal" style="margin-top:32px">
+          <a class="btn btn--red" href="contact.html#offerte">Terug naar het formulier <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--dark" href="mailto:info@grosfeld-interieurbouw.nl">Stel uw vraag per e-mail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="cta-titel">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <img class="cta-band__img" src="img/Interieurbouw-meubels00062.jpg" alt="" loading="lazy" width="800" height="600">
+      <div>
+        <h2 class="h2" id="cta-titel">Liever eerst even bellen?</h2>
+        <p>Wij denken graag met u mee over uw trap, meubel of interieur, binnen 30 km rond Weert.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--red" href="tel:+31495625272">Bel 0495 625272</a>
+        <a class="btn btn--light" href="contact.html">Naar contact</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /INHOUD -->
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img class="footer__logo" src="img/interieurbouw-grosfeld-weert.png" alt="Grosfeld Interieurbouw &amp; Trappen" width="450" height="101" loading="lazy">
+      <p>Sinds 2001 maatwerk houten trappen, meubels en interieurs voor particulieren, bedrijven en architecten, binnen 30 km rond Weert.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      <h2>Pagina's</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trappen.html">Trappen</a></li>
+        <li><a href="zoldertrap.html">Zoldertrap</a></li>
+        <li><a href="interieurbouw.html">Interieurbouw</a></li>
+        <li><a href="projecten.html">Projecten</a></li>
+        <li><a href="over-ons.html">Over ons</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2>Diensten</h2>
+      <ul>
+        <li><a href="trappen.html">Maatwerk trappen</a></li>
+        <li><a href="trappen.html#traprenovatie">Traprenovatie</a></li>
+        <li><a href="zoldertrap.html">Vaste trap naar de zolder</a></li>
+        <li><a href="interieurbouw.html">Meubels en interieurs</a></li>
+        <li><a href="contact.html#offerte">Offerte aanvragen</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <ul>
+        <li>Veldbloemstraat 46<br>6002 CH Weert</li>
+        <li><a href="tel:+31495625272">0495 625272</a></li>
+        <li><a href="tel:+31623852878">06 23852878</a></li>
+        <li><a href="mailto:info@grosfeld-interieurbouw.nl">info@grosfeld-interieurbouw.nl</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="wrap">
+      <p>&copy; Grosfeld Interieurbouw &amp; Trappen, Weert. <a href="privacy.html">Privacyverklaring</a></p>
+      <p>Demo door Berie Foundation</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
